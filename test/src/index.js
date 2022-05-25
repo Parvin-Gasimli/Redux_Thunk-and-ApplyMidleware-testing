@@ -10,12 +10,16 @@ import {
   bindActionCreators,
   combineReducers,
 } from 'redux'
+import { Provider } from 'react-redux'
+import { store } from './store'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
-  <React.StrictMode>
+  <Provider store={store}>
+    <React.StrictMode>
     <App />
-  </React.StrictMode>,
+  </React.StrictMode>
+  </Provider>,
 )
 // // const makeLouder =string=>string.toUpperCase()
 // // const repeatThreetimes=string=>string.repeat(4)
@@ -143,4 +147,4 @@ root.render(
 
 // // const store = createStore(reducers)
 
-store.dispatch({ type: 'hello' })
+// store.dispatch({ type: 'hello' })
